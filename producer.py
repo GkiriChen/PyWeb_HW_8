@@ -5,8 +5,11 @@ from faker import Faker
 from sender_mail.database.models import Contact
 
 fake = Faker()
-credentials = pika.PlainCredentials('guest', 'guest')
-connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost', port=5672, credentials=credentials))
+credentials = pika.PlainCredentials(username='sqvsmbzo', password='Xgee9pGGP9o94HNk0myQWyIxn3aw_OqC')
+connection = pika.BlockingConnection(pika.ConnectionParameters(host='puffin-01.rmq2.cloudamqp.com', 
+                                                               port=5672, 
+                                                               credentials=credentials, 
+                                                               virtual_host='sqvsmbzo'))
 channel = connection.channel()
 
 channel.exchange_declare(exchange='contact_services', exchange_type='direct')

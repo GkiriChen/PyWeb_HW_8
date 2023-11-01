@@ -5,8 +5,11 @@ import time
 from sender_mail.database.models import Contact
 
 
-credentials = pika.PlainCredentials('guest', 'guest')
-connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost', port=5672, credentials=credentials))
+credentials = pika.PlainCredentials(username='sqvsmbzo', password='Xgee9pGGP9o94HNk0myQWyIxn3aw_OqC')
+connection = pika.BlockingConnection(pika.ConnectionParameters(host='puffin-01.rmq2.cloudamqp.com', 
+                                                               port=5672, 
+                                                               credentials=credentials,
+                                                               virtual_host='sqvsmbzo'))
 channel = connection.channel()
 
 channel = connection.channel()
